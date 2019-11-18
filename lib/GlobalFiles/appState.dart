@@ -132,11 +132,7 @@ class AppState extends ChangeNotifier {
   }
 
   void setVibration(shouldVibrate) async {
-    if (shouldVibrate) {
-      _vibration = true;
-    } else {
-      _vibration = false;
-    }
+    _vibration = shouldVibrate;
     _prefs = await SharedPreferences.getInstance();
     _prefs.setBool('vibration', _vibration);
   }
